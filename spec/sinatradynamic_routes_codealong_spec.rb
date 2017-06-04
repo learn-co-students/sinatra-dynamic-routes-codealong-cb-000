@@ -1,13 +1,20 @@
 require 'spec_helper'
-describe 'APP' do 
+describe 'APP' do
 
+  describe 'GET /hello/:name' do
+    it 'sends a 200 status code' do
+      get '/hello/danny'
+      expect(last_response.status).to eq(200)
+    end
+  end
+  
   describe 'GET /goodbye/:name' do
     it 'sends a 200 status code' do
       get '/goodbye/danny'
       expect(last_response.status).to eq(200)
     end
 
-    it 'displays goodbye and a name' do 
+    it 'displays goodbye and a name' do
       get '/goodbye/danny'
       expect(last_response.body).to include("Goodbye danny")
     end
@@ -19,7 +26,7 @@ describe 'APP' do
       expect(last_response.status).to eq(200)
     end
 
-    it 'displays product of route params' do 
+    it 'displays product of route params' do
       get '/multiply/5/5'
       expect(last_response.body).to include("25")
     end
