@@ -7,7 +7,7 @@ describe 'app.rb' do
       expect(last_response.status).to eq(200)
     end
 
-    it "displays 'goodbye' and a name" do
+    it "displays 'Goodbye, ' and a name" do
       get '/goodbye/danny'
       expect(last_response.body).to include("Goodbye, danny.")
     end
