@@ -27,9 +27,8 @@ class App < Sinatra::Base
     resp.status = 200
     @num_a = params[:num1]
     @num_b = params[:num2]
-    @answer = @num_a * @num_b
-    "#{@answer}"
-    binding.pry
+    @answer = @num_a.to_i * @num_b.to_i
+    @answer.to_s
   end
 
 end

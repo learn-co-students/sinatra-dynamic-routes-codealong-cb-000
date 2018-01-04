@@ -21,7 +21,7 @@ describe 'app.rb' do
   describe 'GET /multiply/:num1/:num2' do
     it 'sends a 200 status code' do
       get '/multiply/5/5'
-      expect(last_response.status).to eq(500)
+      expect(last_response.status).to eq(200)
     end
 
     it 'displays the product of the two numbers in the route' do
@@ -32,7 +32,7 @@ describe 'app.rb' do
     it 'is not hard-coded' do
       get '/multiply/7/7'
       expect(last_response.body).to include("49")
-      expect(last_response.body).to include("36")
+      expect(last_response.body).to_not include("36")
     end
   end
 end
