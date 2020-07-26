@@ -15,4 +15,20 @@ class App < Sinatra::Base
 
   # Code your final two routes here:
 
+  get '/goodbye/:name' do
+    resp = Rack::Response.new
+    resp.status = 200
+    @user_name = params[:name]
+    "Goodbye, #{@user_name}."
+  end
+
+  get '/multiply/:num1/:num2' do
+    resp = Rack::Response.new
+    resp.status = 200
+    @num_a = params[:num1]
+    @num_b = params[:num2]
+    @answer = @num_a.to_i * @num_b.to_i
+    @answer.to_s
+  end
+
 end
