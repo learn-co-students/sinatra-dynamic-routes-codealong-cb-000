@@ -1,4 +1,4 @@
-# Dynamic Routes in Sinatra
+bun# Dynamic Routes in Sinatra
 
 ## Overview
 
